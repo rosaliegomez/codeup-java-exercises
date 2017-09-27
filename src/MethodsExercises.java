@@ -2,20 +2,20 @@ import java.util.Scanner;
 
 public class MethodsExercises {
     public static void main(String[] args) {
-    addition(7,8);
+        System.out.println(addition(2,3));
     subtraction(9,2);
     multiplication(5,6);
     division(40,8);
     modulus(42, 8);
 
     getInteger(1, 10);
-    getFactorial(4);
+    getFactorial(6);
 
     roll();
 
     }
-    public static void addition(int x, int y){
-        System.out.println(x + y);
+    public static int addition(int x, int y){
+        return x+y;
     }
     public static void subtraction(int a, int b){
         System.out.println(a - b);
@@ -29,6 +29,7 @@ public class MethodsExercises {
     public static void modulus(int p, int s){
         System.out.println(p % s);
     }
+
     public static int getInteger(int min, int max){
         System.out.println("Enter a number between " + min + " and " + max + ": ");
         Scanner scan = new Scanner(System.in);
@@ -41,10 +42,10 @@ public class MethodsExercises {
                 return number;
             }
     }
-    public static int getFactorial(int number){
+    public static void getFactorial(int num){
         System.out.println("Enter a number between 1 and 10");
         Scanner scan = new Scanner(System.in);
-        int num = scan.nextInt();
+        //int num = scan.nextInt();
         System.out.println(num);
         scan.nextLine();
 
@@ -55,25 +56,32 @@ public class MethodsExercises {
             System.out.println("end");
         }
         if(num == 0 || num == 1){
-            return 1;
+            System.out.println("1");
         }
 
 
-        for(int i = num - 1; i >= 1; i--){
-            System.out.println(num = num * i);
-        }return  number;
+        for(int i = num -1; i >= 1; i--){
+            num = num *i ;
+        }
+            System.out.println(num);
 
     }
-    public static int roll(){
+    public static void roll(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter the number for a pair of dice");
-        int number = scan.nextInt();
+        String userWantsToContinue;
+        do {
+            System.out.println("Enter the number of sides for a pair of dice");
+            int number = scan.nextInt();
 
-        System.out.println(number);
-        double die1 = Math.floor(Math.random() * 6) + 1;
-        double die2 = Math.floor(Math.random() * 6) +1;
-        System.out.println("First roll is " + die1 + " Second roll is " +die2);
-        return number;
+            System.out.println(number);
+            double die1 = Math.floor(Math.random() * number) + 1;
+            double die2 = Math.floor(Math.random() * number) + 1;
+            System.out.println("First roll is " + die1 + " Second roll is " + die2);
+            System.out.println("Do you want to continue? y/n?");
+            scan.nextLine();
+            userWantsToContinue = scan.nextLine();
+        } while(userWantsToContinue.equalsIgnoreCase("y") || (userWantsToContinue.equalsIgnoreCase("yes")));
+
 
     }
 }
