@@ -11,7 +11,7 @@ public class InputTest {
 
         input.getInt("Enter a number");
 
-        input.getInt(1,100);
+        input.getIntWithinRange("Enter a number", 1,100);
 
         input.getDouble(1, 10);
 
