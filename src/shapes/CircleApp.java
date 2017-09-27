@@ -5,7 +5,7 @@ public class CircleApp {
     Circle circle = new Circle(3);
 
 
-    circle.getArea();
+        System.out.println("the area of the circle is " + circle.getArea());
 
     circle.getCircumference();
     }

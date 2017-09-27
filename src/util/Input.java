@@ -4,7 +4,11 @@ import java.util.Scanner;
 
 public class Input {
 
-    private Scanner scan = new Scanner(System.in);
+    private Scanner scan;
+
+    public Input() {
+        this.scan = new Scanner(System.in);
+    }
 
 
     public String getString(String prompt){
@@ -17,26 +21,21 @@ public class Input {
     public boolean yesNo(String prompt){
         System.out.println(prompt);
         String yesOrNo = scan.nextLine();
-        System.out.println(yesOrNo.equalsIgnoreCase("yes"));
-        return true;
+        return yesOrNo.equalsIgnoreCase("y") || yesOrNo.equalsIgnoreCase("yes");
     }
 
     public int getInt(String prompt){
         System.out.println(prompt);
         int number = scan.nextInt();
-        System.out.println(number);
         return number;
     }
 
-    public int getInt(int min, int max){
-        System.out.println("Enter a number between 1 and 100.");
-        int newNumber = scan.nextInt();
-        if (newNumber> 1 && newNumber < 100){
-            System.out.println(newNumber);
-        } else{
-            getInt(min, max);
+    public int getIntWithinRange(String prompt, int min, int max){
+        int newNumber = getInt(prompt);
+        if (newNumber < min && newNumber > max){
+            System.out.println("Error - Number must be within range");
         }
-
+        scan.nextLine();
         return newNumber;
     }
 

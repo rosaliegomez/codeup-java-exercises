@@ -1,7 +1,6 @@
 public class Person {
+
     private String firstName;
-
-
     public Person(String aFirstName)
 
     {
