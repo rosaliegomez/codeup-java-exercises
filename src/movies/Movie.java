@@ -17,10 +17,6 @@ public class Movie {
         return this.category;
     }
 
-//    public String getAnimated(){
-//        if (category.equalsIgnoreCase("animated")){
-//            return this.category;
-//        }
-//    }
+
 }
 
