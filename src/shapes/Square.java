@@ -11,13 +11,11 @@ public class Square extends Rectangle{
     }
 
     public int getPerimeter(){
-        int perimeter = 4 * side;
-        return perimeter;
+        return 4 * side;
     }
 
     public int getArea(){
-        int area = side * side;
-        return area;
+        return side * side;
     }
 
 }
