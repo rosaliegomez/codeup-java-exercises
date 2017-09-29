@@ -1,6 +1,8 @@
 package movies;
 import util.Input;
 
+import java.util.Scanner;
+
 public class MoviesApplication {
     public static void main(String[] args) {
 
@@ -13,6 +15,7 @@ public class MoviesApplication {
             System.out.println("3 - view movies in the drama category");
             System.out.println("4 - view movies in the horror category");
             System.out.println("5 - view movies in the scifi category");
+            System.out.println("6 - Add a new movie");
 
             int selection = input.getIntWithinRange("Enter your choice:", 1, 6);
             getCategoryFromUser(selection);
@@ -57,5 +60,14 @@ public class MoviesApplication {
                 System.out.println(movie.getName() + "-" + movie.getCategory());
             }
         }
+    }
+
+    public static void addNewMovie(String name, String category){
+        System.out.println("Add new movie and its category:");
+        Scanner scan = new Scanner(System.in);
+        String newMovieName = scan.nextLine();
+        String newCategoryName = scan.nextLine();
+
+
     }
 }

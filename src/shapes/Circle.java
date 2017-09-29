@@ -2,7 +2,7 @@ package shapes;
 
 import java.util.Scanner;
 
-public class Circle {
+public class Circle implements Measurable{
 
     private double radius;
     double pi = 3.14159;
@@ -22,6 +22,12 @@ public class Circle {
         System.out.println(area);
         return area;
     }
+
+    @Override
+    public double getPerimeter() {
+        return 0;
+    }
+
     public double getCircumference(){
         System.out.println("The circumference is: ");
         double circumference = 2 * pi * radius;
