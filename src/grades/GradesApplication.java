@@ -9,9 +9,9 @@ import java.io.*;
 
 public class GradesApplication {
 
+static Input input = new Input();
 
     public static void main(String[] args) {
-Input input = new Input();
         HashMap<String, Student> students = new HashMap<String, Student>();
 
 
@@ -82,8 +82,16 @@ Input input = new Input();
                 System.out.println(username);
             }
         }
-
+        printAll(students);
         }
+
+        public static void printAll(HashMap<String, Student> students){
+        for (Student aStudent: students.values() ){
+
+            System.out.println(aStudent.getName() + "'s grades: "  + aStudent.getGrades() + " Current average: " + aStudent.getGradeAverage() );
+        }
+    }
+
 
     }
 

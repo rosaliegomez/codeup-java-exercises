@@ -22,7 +22,7 @@ public class Student {
     }
 
     public void addGrade(double grade){
-       grades.add(grade);
+       this.grades.add(grade);
     }
 
     public double getGradeAverage(){
@@ -32,12 +32,5 @@ public class Student {
         }
         return average / grades.size();
     }
-public static void main(String[] args) {
-    Student student = new Student("Jane");
-    student.addGrade(97);
-    student.addGrade(90);
-    student.addGrade(80);
 
-    System.out.println(student.getGradeAverage());
-}
 }
